@@ -5,10 +5,10 @@ public static class MinigameFactory
 {
     private static List<BaseMinigame> minigames = new List<BaseMinigame>
     {
-        new RockPaperScissors(),
+        //new RockPaperScissors(),
         new CoinToss(),
-        new NumberGuessMinigame(),
-        new MemoryMatchingMinigame()
+        //new NumberGuessMinigame(),
+        //new MemoryMatchingMinigame()
     };
 
     public static BaseMinigame GetRandomMinigame()

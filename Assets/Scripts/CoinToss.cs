@@ -8,14 +8,14 @@ public class CoinToss : BaseMinigame
         Tails
     }
 
-    private CoinChoice coinOutcome;
+    public AnimationClip coinHeadsAnimation;
+    public AnimationClip coinTailsAnimation;
 
-    public override System.Enum AIChoice => coinOutcome;
+    private CoinChoice simulatedTossResult; // Stores the result of the coin toss
 
     public override void StartMinigame()
     {
-        // Simulate Coin Toss
-        coinOutcome = Random.Range(0, 2) == 0 ? CoinChoice.Heads : CoinChoice.Tails;
+        SimulateCoinToss();
     }
     public override System.Enum GetChoiceFromIndex(int index)
     {
@@ -24,8 +24,15 @@ public class CoinToss : BaseMinigame
     public override void ResolveMinigame(System.Enum playerChoice)
     {
         CoinChoice playerCoinChoice = (CoinChoice)playerChoice;
-        GameResult result = playerCoinChoice == coinOutcome ? GameResult.Win : GameResult.Lose;
+        GameResult result = playerCoinChoice == simulatedTossResult ? GameResult.Win : GameResult.Lose;
         EndGame(result);
+    }
+    public override System.Enum AIChoice => simulatedTossResult; // The result of the coin toss, not an AI choice
+
+    private void SimulateCoinToss()
+    {
+        // Simulate the coin toss (randomly select heads or tails)
+        simulatedTossResult = (CoinChoice)Random.Range(0, 2);
     }
     public override string GetResultDisplayText(GameResult result)
     {

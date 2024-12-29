@@ -3917,9 +3917,9 @@ MonoBehaviour:
   notDodgeButton: {fileID: 130328981}
   minigamePrefabs:
   - {fileID: 2257700309362023229, guid: faceb67ec898acc449125bac2d906342, type: 3}
-  - {fileID: 4681480698035684313, guid: 7dab3cb6c5ba1cb4a804f51f8e2ca2e3, type: 3}
-  - {fileID: 1820646053879581763, guid: 99e5f7ecb01ed78489ce2b78cc96f413, type: 3}
   - {fileID: 2848786770171322760, guid: f1ffee23aaecb9f4db64b87414775b7c, type: 3}
+  - {fileID: 1820646053879581763, guid: 99e5f7ecb01ed78489ce2b78cc96f413, type: 3}
+  - {fileID: 4681480698035684313, guid: 7dab3cb6c5ba1cb4a804f51f8e2ca2e3, type: 3}
 --- !u!4 &1123150426
 Transform:
   m_ObjectHideFlags: 0

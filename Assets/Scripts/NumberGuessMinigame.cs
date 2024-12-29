@@ -3,7 +3,7 @@ using UnityEngine;
 public class NumberGuessMinigame : BaseMinigame
 {
     // Enum for possible number choices
-    public enum NumberChoices { One = 1, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten }
+    public enum NumberChoices { One = 1, Two, Three, Four, Five, Six, Seven, Eight, Nine}
 
     private NumberChoices aiChoice; // AI's choice
     private NumberChoices playerChoice; // Player's choice
@@ -13,7 +13,7 @@ public class NumberGuessMinigame : BaseMinigame
     // StartMinigame: Randomly assign AI's choice
     public override void StartMinigame()
     {
-        aiChoice = (NumberChoices)Random.Range(1, 11); // Random number between 1 and 10
+        aiChoice = (NumberChoices)Random.Range(1, 10); // Random number between 1 and 10
     }
 
     // Resolve the minigame based on the player's choice

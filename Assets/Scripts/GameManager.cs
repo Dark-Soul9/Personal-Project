@@ -72,7 +72,6 @@ public class GameManager : MonoBehaviour
     private string playerAction = "";
     private string aiAction = "";
 
-    // Called by PlayerInputHandler when a button is clicked
     public void PlayerMadeChoice(int choiceIndex)
     {
         // Convert the choice index into the correct enum for the current minigame
