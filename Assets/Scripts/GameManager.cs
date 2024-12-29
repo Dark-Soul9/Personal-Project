@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,10 +31,39 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI aiChoiceText;       // Displays AI choice
     public TextMeshProUGUI resultText;         // Displays minigame result
 
-    public Button rockButton, paperButton, scissorsButton;  // Rock-Paper-Scissors buttons
-    public Button headsButton, tailsButton;                 // Coin Toss buttons
-    public Button shootButton, bluffButton;                 // Post-minigame win buttons
-    public Button dodgeButton, notDodgeButton;              // Post-minigame lose buttons
+    [Header("RockPaperScissors")]
+    public Button rockButton;
+    public Button paperButton;
+    public Button scissorsButton;  // Rock-Paper-Scissors buttons
+
+    [Header("CoinToss")]
+    public Button headsButton;
+    public Button tailsButton;                 // Coin Toss buttons
+
+    [Header("NumberGuess")]
+    public Button oneButton;
+    public Button twoButton;
+    public Button threeButton;
+    public Button fourButton;
+    public Button fiveButton;
+    public Button sixButton;
+    public Button sevenButton;
+    public Button eightButton;
+    public Button nineButton;
+
+    [Header("MemoryMatching")]
+    public Button red;
+    public Button blue;
+    public Button green;
+    public Button yellow;
+    public Button purple;
+    public Button orange;
+
+    [Header("Post-Minigame Section")]
+    public Button shootButton;
+    public Button bluffButton;                 // Post-minigame win buttons
+    public Button dodgeButton;
+    public Button notDodgeButton;              // Post-minigame lose buttons
 
     [SerializeField] private List<BaseMinigame> minigamePrefabs; // List of minigame prefabs
 
@@ -91,6 +121,27 @@ public class GameManager : MonoBehaviour
         {
             headsButton.gameObject.SetActive(true);
             tailsButton.gameObject.SetActive(true);
+        }
+        else if (currentMinigame is NumberGuessMinigame)
+        {
+            oneButton.gameObject.SetActive(true);
+            twoButton.gameObject.SetActive(true);
+            threeButton.gameObject.SetActive(true);
+            fourButton.gameObject.SetActive(true);
+            fiveButton.gameObject.SetActive(true);
+            sixButton.gameObject.SetActive(true);
+            sevenButton.gameObject.SetActive(true);
+            eightButton.gameObject.SetActive(true);
+            nineButton.gameObject.SetActive(true);
+        }
+        else if ( currentMinigame is MemoryMatchingMinigame)
+        {
+            red.gameObject.SetActive(true);
+            green.gameObject.SetActive(true);
+            blue.gameObject.SetActive(true);
+            yellow.gameObject.SetActive(true);
+            purple.gameObject.SetActive(true);
+            orange.gameObject.SetActive(true);
         }
 
         actionPanel.SetActive(false);
@@ -217,5 +268,6 @@ public class GameManager : MonoBehaviour
     private void EndGame()
     {
         Debug.Log(playerLives > 0 ? "Player Wins!" : "AI Wins!");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

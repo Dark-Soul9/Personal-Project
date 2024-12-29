@@ -6,7 +6,9 @@ public static class MinigameFactory
     private static List<BaseMinigame> minigames = new List<BaseMinigame>
     {
         new RockPaperScissors(),
-        new CoinToss()
+        new CoinToss(),
+        new NumberGuessMinigame(),
+        new MemoryMatchingMinigame()
     };
 
     public static BaseMinigame GetRandomMinigame()

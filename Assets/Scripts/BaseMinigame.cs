@@ -1,5 +1,4 @@
 using UnityEngine;
-using static CoinToss;
 
 public abstract class BaseMinigame : MonoBehaviour
 {
